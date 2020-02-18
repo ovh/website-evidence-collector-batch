@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "no-console": "off",
+    "no-bitwise": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off"
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  }
+}
