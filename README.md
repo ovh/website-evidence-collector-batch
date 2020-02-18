@@ -1,4 +1,4 @@
-# website-evidence-reporter-batch
+# website-evidence-collector-batch
 
 A tool to launch [website-evidence-collector](https://github.com/EU-EDPS/website-evidence-collector) on several URLs or Sitemaps and generate a full report.
 
@@ -17,7 +17,7 @@ $ npm install -g git+https://github.com/ovh/website-evidence-collector-batch.git
 ## Usage
 
 ```bash
-$ website-evidence-reporter-batch --config="/path/to/config/file"
+$ website-evidence-collector-batch --config="/path/to/config/file"
 ```
 
 Your results will be stored in the output folder, like this:
@@ -61,15 +61,15 @@ This tool will launch multiple instances in parallel, and then merge the results
 
 As an example, on a set of **100** URLs, we've benchmarked that this is **3x** faster:
 
-|                                                      |           |
-|------------------------------------------------------|-----------|
-| website-evidence-reporter with --browse-link         | ~13min41s |
-| website-evidence-reporter-batch (4 CPUs / 4 workers) | ~04min38s |
+|                                                       |           |
+|-------------------------------------------------------|-----------|
+| website-evidence-collector with --browse-link         | ~13min41s |
+| website-evidence-collector-batch (4 CPUs / 4 workers) | ~04min38s |
 
 ## Credits
 
-This tool is based on the great tool from @rriemann-eu: [website-evidence-reporter](https://github.com/EU-EDPS/website-evidence-collector).
+This tool is based on the great tool from @rriemann-eu: [website-evidence-collector](https://github.com/EU-EDPS/website-evidence-collector).
 
 ## License
 
-This tool is licensed under the same license than [website-evidence-reporter](https://github.com/EU-EDPS/website-evidence-collector/blob/master/LICENSE.txt). See [LICENSE.txt](LICENSE.txt) file.
+This tool is licensed under the same license than [website-evidence-collector](https://github.com/EU-EDPS/website-evidence-collector/blob/master/LICENSE.txt). See [LICENSE.txt](LICENSE.txt) file.
