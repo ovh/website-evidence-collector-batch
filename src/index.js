@@ -257,9 +257,9 @@ const handleResults = async ({
   logger.info('[master] Generating individual reports...');
   await Bluebird.map(results, async (result) => {
     logger.debug(`[master] Generating individual report for ${result.url}...`);
-    const reportFileLocation = path.resolve(config.get('output'), 'full_results', `${_.snakeCase(result.url)}.json`);
-    await writeFile(reportFileLocation, result.results);
     try {
+      const reportFileLocation = path.resolve(config.get('output'), 'full_results', `${_.snakeCase(result.url)}.json`);
+      await writeFile(reportFileLocation, result.results);
       const { stdout: reportHtml } = await execa.command(`website-evidence-reporter ${reportFileLocation}`, { timeout: 30000 });
       await writeFile(path.resolve(config.get('output'), 'full_results', `${_.snakeCase(result.url)}.html`), reportHtml);
     } catch (e) {
