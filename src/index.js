@@ -34,6 +34,7 @@ const validateConfig = async (config) => {
     workers: Joi.number().integer(),
     dnt: Joi.boolean(),
     firstPartyUri: Joi.string().uri().required(),
+    setCookie: Joi.string(),
     urls: Joi.array().items(Joi.string().uri().required()),
     sitemaps: Joi.array().items(Joi.object().keys({
       url: Joi.string().uri(),
@@ -352,7 +353,7 @@ const setupWorker = async (config) => {
     };
 
     try {
-      const command = `website-evidence-collector ${url} --first-party-uri="${config.get('firstPartyUri')}" ${config.get('dnt') ? '--dnt-js' : ''} --sleep=3000 --overwrite --quiet --no-output --json --headless -- --disable-gpu --ignore-certificate-errors --no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage`;
+      const command = `website-evidence-collector ${url} --first-party-uri="${config.get('firstPartyUri')}" ${config.get('dnt') ? '--dnt-js' : ''} ${config.get('setCookie') ? '--set-cookie "'+config.get('setCookie')+'"' : ''} --sleep=3000 --overwrite --quiet --no-output --json --headless -- --disable-gpu --ignore-certificate-errors --no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage`;
       const { stdout } = await execa.command(command, { timeout: 30000 });
       result.results = JSON.parse(stdout);
 

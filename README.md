@@ -43,6 +43,8 @@ sitemaps:                                             # (required/optional) Site
   - url: 'https://ovhcloud.com/fr/sitemap.xml'
     exclude: '/^exclude/these/url$/'
   - file: '/path/to/sitemap_custom.xml'
+setCookie: cookies.txt                                # (optional) --set-cookie option to be passed to website-evidence-collector
+                                                      # see https://github.com/EU-EDPS/website-evidence-collector/blob/master/FAQ.md#how-do-i-gather-evidence-with-given-consent 
 ```
 
 You must provide at least one item in `urls` and/or `sitemaps`.
