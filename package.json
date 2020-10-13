@@ -13,25 +13,25 @@
     "website-evidence-collector-batch": "./bin/cli.js"
   },
   "scripts": {
-    "lint": "eslint src --fix",
+    "lint": "eslint src",
     "test": "npm run lint"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.0",
     "bluebird": "^3.7.2",
-    "chalk": "^3.0.0",
+    "chalk": "^4.1.0",
     "cheerio": "^1.0.0-rc.3",
-    "commander": "^4.1.1",
-    "execa": "^4.0.0",
-    "fs-extra": "^8.1.0",
-    "got": "^10.5.7",
-    "js-yaml": "^3.13.1",
-    "lodash": "^4.17.19",
-    "winston": "^3.2.1"
+    "commander": "^6.1.0",
+    "execa": "^4.0.3",
+    "fs-extra": "^9.0.1",
+    "got": "^11.7.0",
+    "js-yaml": "^3.14.0",
+    "lodash": "^4.17.20",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.20.1"
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
